@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BOUND 2 BE HEALTHY</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --void:#080806;--ash:#111110;--dust:#1C1C19;--dirt:#2A2A24;--mud:#3D3D35;
+  --sand:#8C8972;--bone:#C4BFA8;--cream:#EDE8D8;--off:#F5F2E8;
+  --red:#C1321F;--yeezy:#D4B896;--green:#4A8C4A;--green-dim:#2D6A2D;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--void);color:var(--cream);
+  font-family:'Space Mono',monospace;
+  font-size:15px;line-height:1.6;overflow-x:hidden;cursor:crosshair;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:0.3;pointer-events:none;z-index:999;mix-blend-mode:overlay;
+}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(8,8,6,0.97);border-bottom:1px solid var(--dirt);
+  padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;
+}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:0.15em;color:var(--off);}
+.logo sup{font-size:0.45rem;color:var(--sand);vertical-align:super;letter-spacing:0.2em;}
+nav ul{list-style:none;display:flex;gap:2rem;align-items:center;}
+nav ul a{color:var(--sand);text-decoration:none;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.15s;}
+nav ul a:hover{color:var(--off);}
+.nav-buy{background:var(--off);color:var(--void);padding:8px 20px;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background 0.15s;}
+.nav-buy:hover{background:var(--yeezy);}
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:0 40px 80px;
+  position:relative;overflow:hidden;border-bottom:1px solid var(--dirt);
+}
+.hero-bg-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);
+  font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(7rem,20vw,20rem);color:transparent;
+  -webkit-text-stroke:1px var(--dirt);white-space:nowrap;
+  pointer-events:none;letter-spacing:-0.04em;user-select:none;opacity:0.5;
+}
+.hero-eyebrow{
+  font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--sand);}
+.hero h1{
+  font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(2.6rem,7vw,7.5rem);line-height:0.93;
+  letter-spacing:-0.03em;color:var(--off);max-width:880px;
+  margin-bottom:2rem;text-transform:uppercase;
+}
+.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:2px var(--yeezy);}
+.hero-sub{font-size:0.78rem;color:var(--sand);max-width:420px;line-height:1.8;margin-bottom:3rem;letter-spacing:0.04em;}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+.btn-p{
+  background:var(--off);color:var(--void);padding:16px 36px;
+  font-family:'Space Mono',monospace;font-size:0.68rem;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;border:none;cursor:pointer;
+  text-decoration:none;display:inline-block;transition:background 0.15s,transform 0.1s;
+}
+.btn-p:hover{background:var(--yeezy);transform:translateY(-2px);}
+.btn-g{
+  background:transparent;color:var(--sand);padding:16px 36px;
+  font-family:'Space Mono',monospace;font-size:0.68rem;
+  letter-spacing:0.15em;text-transform:uppercase;border:1px solid var(--dirt);
+  cursor:pointer;text-decoration:none;display:inline-block;transition:color 0.15s,border-color 0.15s;
+}
+.btn-g:hover{color:var(--cream);border-color:var(--mud);}
+.hero-stats{
+  display:flex;gap:3rem;flex-wrap:wrap;
+  margin-top:5rem;padding-top:3rem;border-top:1px solid var(--dirt);
+}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--yeezy);line-height:1;margin-bottom:4px;}
+.stat-lbl{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);}
+.tape{
+  height:46px;background:var(--off);display:flex;align-items:center;
+  overflow:hidden;white-space:nowrap;
+  border-top:1px solid var(--dirt);border-bottom:1px solid var(--dirt);
+}
+.tape-inner{
+  display:inline-flex;gap:0;
+  animation:tape 20s linear infinite;
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.1em;color:var(--void);
+}
+@keyframes tape{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.tape-item{padding:0 2rem;}
+.tape-sep{opacity:0.25;}
+section{padding:120px 40px;border-bottom:1px solid var(--dirt);}
+.s-lbl{
+  font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:2rem;display:flex;align-items:center;gap:12px;
+}
+.s-lbl::before{content:'';display:block;width:22px;height:1px;background:var(--sand);}
+.s-ttl{
+  font-family:'Unbounded',sans-serif;font-weight:900;
+  font-size:clamp(2rem,5vw,5rem);line-height:0.93;
+  letter-spacing:-0.02em;text-transform:uppercase;color:var(--off);
+  max-width:780px;margin-bottom:1.5rem;
+}
+.s-sub{font-size:0.78rem;color:var(--sand);max-width:460px;line-height:1.8;margin-bottom:4rem;letter-spacing:0.02em;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--dirt);}
+@media(max-width:860px){.feat-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.feat-grid{grid-template-columns:1fr;}}
+.feat{
+  padding:2.5rem 2rem;border-right:1px solid var(--dirt);
+  border-bottom:1px solid var(--dirt);transition:background 0.2s;
+}
+.feat:hover{background:var(--ash);}
+.feat-num{
+  font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--dirt);
+  line-height:1;margin-bottom:1.25rem;transition:color 0.2s;
+}
+.feat:hover .feat-num{color:var(--mud);}
+.feat-ttl{
+  font-family:'Unbounded',sans-serif;font-size:0.78rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.04em;color:var(--bone);margin-bottom:0.6rem;
+}
+.feat-desc{font-size:0.75rem;color:var(--sand);line-height:1.7;}
+.demo{background:var(--ash);border:1px solid var(--dirt);padding:2px;max-width:880px;margin:0 auto;}
+.demo-inner{background:var(--void);padding:2rem;}
+.demo-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:1.5rem;border-bottom:1px solid var(--dirt);margin-bottom:2rem;flex-wrap:wrap;gap:1rem;
+}
+.demo-date{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);}
+.demo-strk{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--yeezy);border:1px solid var(--yeezy);padding:4px 12px;}
+.demo-rings{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-bottom:2rem;}
+.ring-w{position:relative;width:88px;height:88px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ring-w svg{position:absolute;inset:0;}
+.ring-in{text-align:center;z-index:1;}
+.ring-v{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--yeezy);line-height:1;}
+.ring-u{font-size:0.52rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);}
+.prog-s{flex:1;min-width:200px;}
+.prog-r{margin-bottom:14px;}
+.prog-l{display:flex;justify-content:space-between;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);margin-bottom:6px;}
+.prog-t{height:3px;background:var(--dust);}
+.prog-f{height:100%;transition:width 0.8s cubic-bezier(.4,0,.2,1);}
+.meal-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--dirt);}
+.mc{
+  background:var(--ash);padding:1.25rem 1rem;
+  cursor:pointer;transition:background 0.15s;position:relative;
+}
+.mc:hover{background:var(--dust);}
+.mc.logged{background:#0D1A0D;}
+.mc.logged::after{
+  content:'LOGGED';position:absolute;top:10px;right:10px;
+  font-size:0.48rem;letter-spacing:0.2em;color:var(--green);
+  border:1px solid var(--green-dim);padding:2px 6px;
+}
+.mc-time{font-size:0.52rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);margin-bottom:6px;}
+.mc-name{
+  font-family:'Unbounded',sans-serif;font-size:0.68rem;font-weight:700;
+  color:var(--bone);margin-bottom:10px;line-height:1.3;text-transform:uppercase;
+}
+.mc-nums{display:flex;gap:12px;}
+.mc-n{font-size:0.58rem;letter-spacing:0.06em;}
+.mc-n b{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--yeezy);margin-right:2px;font-weight:400;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--dirt);}
+.testi{background:var(--ash);padding:2.5rem 2rem;transition:background 0.2s;}
+.testi:hover{background:var(--dust);}
+.testi-q{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--dirt);line-height:1;margin-bottom:1rem;}
+.testi-txt{font-size:0.78rem;color:var(--sand);line-height:1.8;font-style:italic;margin-bottom:1.5rem;}
+.testi-res{
+  font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--green);border:1px solid var(--green-dim);padding:5px 12px;display:inline-block;margin-bottom:1.5rem;
+}
+.testi-meta{display:flex;align-items:center;gap:12px;}
+.testi-av{
+  width:36px;height:36px;background:var(--dirt);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--yeezy);flex-shrink:0;
+}
+.testi-nm{font-size:0.68rem;font-weight:700;color:var(--bone);letter-spacing:0.05em;text-transform:uppercase;}
+.testi-ct{font-size:0.58rem;color:var(--mud);letter-spacing:0.1em;text-transform:uppercase;}
+.price-wrap{max-width:660px;margin:0 auto;}
+.price-box{border:1px solid var(--yeezy);padding:4rem 3rem;position:relative;background:var(--ash);}
+.price-lbl{
+  position:absolute;top:-12px;left:36px;
+  background:var(--yeezy);color:var(--void);
+  font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;padding:4px 14px;
+}
+.price-val{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,14vw,10rem);
+  color:var(--off);line-height:0.9;letter-spacing:-0.02em;margin-bottom:0.5rem;
+}
+.price-val sup{font-size:3rem;vertical-align:super;}
+.price-note{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand);margin-bottom:3rem;}
+.price-list{list-style:none;margin-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;gap:0;}
+@media(max-width:520px){.price-list{grid-template-columns:1fr;}}
+.price-list li{
+  font-size:0.68rem;letter-spacing:0.04em;color:var(--sand);
+  padding:10px 0;border-bottom:1px solid var(--dirt);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.price-list li::before{content:'—';color:var(--yeezy);flex-shrink:0;}
+.guarantee{
+  margin-top:2rem;display:flex;align-items:center;gap:10px;
+  font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--green);padding:14px 0;border-top:1px solid var(--dirt);
+}
+.guarantee::before{content:'✓';font-size:0.9rem;}
+.upi-box{margin-top:2.5rem;border:1px solid var(--dirt);padding:3rem;}
+.upi-ttl{
+  font-family:'Unbounded',sans-serif;font-weight:900;font-size:1.4rem;
+  text-transform:uppercase;letter-spacing:-0.01em;color:var(--off);margin-bottom:0.5rem;
+}
+.upi-sub{font-size:0.72rem;color:var(--sand);margin-bottom:2rem;letter-spacing:0.04em;line-height:1.7;}
+.upi-cnt{display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;}
+.upi-qrz{
+  width:170px;height:170px;flex-shrink:0;
+  border:1px dashed var(--mud);background:var(--dust);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;transition:border-color 0.2s,background 0.2s;position:relative;overflow:hidden;
+}
+.upi-qrz:hover{border-color:var(--yeezy);background:var(--dirt);}
+.upi-qrz input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.qr-ph{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--mud);text-align:center;line-height:1.9;padding:1rem;}
+.upi-qr-img{width:100%;height:100%;object-fit:contain;}
+.upi-rt{flex:1;min-width:180px;}
+.upi-id-lbl{font-size:0.52rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--sand);margin-bottom:8px;}
+.upi-id-row{display:flex;align-items:stretch;border:1px solid var(--dirt);margin-bottom:1.5rem;}
+.upi-id-val{
+  flex:1;padding:14px 14px;
+  font-family:'Space Mono',monospace;font-size:0.88rem;font-weight:700;
+  color:var(--yeezy);background:var(--void);word-break:break-all;
+}
+.upi-copy{
+  background:var(--dirt);color:var(--bone);border:none;
+  padding:14px 14px;font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;
+  cursor:pointer;font-family:'Space Mono',monospace;transition:background 0.15s;white-space:nowrap;
+}
+.upi-copy:hover{background:var(--mud);}
+.upi-steps{list-style:none;counter-reset:s;}
+.upi-steps li{
+  counter-increment:s;display:flex;gap:12px;align-items:flex-start;
+  font-size:0.7rem;color:var(--sand);padding:10px 0;border-bottom:1px solid var(--dirt);line-height:1.6;
+}
+.upi-steps li::before{content:counter(s);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--yeezy);flex-shrink:0;line-height:1.1;width:18px;}
+.faq-wrap{max-width:740px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--dirt);}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:2rem 0;cursor:pointer;gap:2rem;
+  font-family:'Unbounded',sans-serif;font-size:0.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.02em;color:var(--bone);transition:color 0.15s;
+}
+.faq-q:hover{color:var(--off);}
+.faq-plus{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--sand);flex-shrink:0;transition:transform 0.3s;line-height:1;}
+.faq-plus.open{transform:rotate(45deg);color:var(--yeezy);}
+.faq-a{font-size:0.76rem;color:var(--sand);max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;line-height:1.8;letter-spacing:0.02em;}
+.faq-a.open{max-height:280px;padding-bottom:2rem;}
+footer{
+  padding:4rem 40px;border-top:1px solid var(--dirt);
+  display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem;
+}
+.ftr-brand{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.1em;color:var(--off);}
+.ftr-by{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand);margin-top:4px;}
+.ftr-links{display:flex;gap:1.5rem;flex-wrap:wrap;align-items:center;}
+.ftr-links a{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand);text-decoration:none;transition:color 0.15s;}
+.ftr-links a:hover{color:var(--off);}
+.ftr-copy{font-size:0.58rem;letter-spacing:0.08em;color:var(--mud);}
+.wa{
+  position:fixed;bottom:24px;right:24px;z-index:200;
+  width:50px;height:50px;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:transform 0.2s;
+}
+.wa:hover{transform:scale(1.08);}
+.wa svg{width:26px;height:26px;fill:white;}
+@keyframes fi{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.hero-eyebrow{animation:fi 0.7s ease both 0.1s;}
+.hero h1{animation:fi 0.8s ease both 0.2s;}
+.hero-sub{animation:fi 0.8s ease both 0.35s;}
+.hero-actions{animation:fi 0.8s ease both 0.5s;}
+@media(max-width:640px){
+  nav ul{display:none;}
+  section{padding:80px 20px;}
+  .hero{padding:0 20px 60px;}
+  footer{padding:3rem 20px;}
+  .upi-cnt{flex-direction:column;}
+  .upi-box{padding:1.75rem 1.25rem;}
+  .price-box{padding:2.5rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">B2BH <sup>®</sup></div>
+  <ul>
+    <li><a href="#features">System</a></li>
+    <li><a href="#pricing">Access</a></li>
+    <li><a href="#faq">Info</a></li>
+    <li><a href="#pricing" class="nav-buy">₹150</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg-text">PROTEIN</div>
+  <div class="hero-eyebrow">Swarit Singh — Nutrition System 001</div>
+  <h1>Stop<br>Missing<br><em>Protein.</em></h1>
+  <p class="hero-sub">India's only vegetarian tracker built around how Indians actually eat. Dal. Paneer. Eggs. Katoris. No approximations. No excuses.</p>
+  <div class="hero-actions">
+    <a href="#pricing" class="btn-p">Get Access — ₹150</a>
+    <a href="#features" class="btn-g">See The System</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">200+</div><div class="stat-lbl">Clients</div></div>
+    <div><div class="stat-num">40+</div><div class="stat-lbl">Indian Foods</div></div>
+    <div><div class="stat-num">7</div><div class="stat-lbl">Day Refund</div></div>
+    <div><div class="stat-num">1×</div><div class="stat-lbl">Payment</div></div>
+  </div>
+</section>
+
+<div class="tape">
+  <div class="tape-inner">
+    <span class="tape-item">BOUND 2 BE HEALTHY</span><span class="tape-sep">///</span>
+    <span class="tape-item">HIT YOUR PROTEIN GOALS</span><span class="tape-sep">///</span>
+    <span class="tape-item">BUILT FOR INDIA</span><span class="tape-sep">///</span>
+    <span class="tape-item">SWARIT SINGH</span><span class="tape-sep">///</span>
+    <span class="tape-item">NO EXCUSES</span><span class="tape-sep">///</span>
+    <span class="tape-item">BOUND 2 BE HEALTHY</span><span class="tape-sep">///</span>
+    <span class="tape-item">HIT YOUR PROTEIN GOALS</span><span class="tape-sep">///</span>
+    <span class="tape-item">BUILT FOR INDIA</span><span class="tape-sep">///</span>
+    <span class="tape-item">SWARIT SINGH</span><span class="tape-sep">///</span>
+    <span class="tape-item">NO EXCUSES</span><span class="tape-sep">///</span>
+  </div>
+</div>
+
+<section id="features">
+  <div class="s-lbl">The System</div>
+  <h2 class="s-ttl">Six tools.<br>One goal.</h2>
+  <p class="s-sub">Everything stripped back to what works. No bloat. No distractions. Just your targets and how you're tracking against them.</p>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-num">01</div><div class="feat-ttl">Indian Food Database</div><div class="feat-desc">40+ foods in katoris and pieces. Moong dal. Soya chunks. Paneer. The stuff you actually eat.</div></div>
+    <div class="feat"><div class="feat-num">02</div><div class="feat-ttl">Smart Targets</div><div class="feat-desc">Your TDEE and protein goal from body stats and goal. Fat loss. Muscle gain. Maintenance.</div></div>
+    <div class="feat"><div class="feat-num">03</div><div class="feat-ttl">Daily Calorie Ring</div><div class="feat-desc">One ring. Calories, protein, carbs, fat. Current vs target. Everything at a glance.</div></div>
+    <div class="feat"><div class="feat-num">04</div><div class="feat-ttl">6-Meal Planning</div><div class="feat-desc">Breakfast to post-dinner. All six meals laid out. Tap to log. Nothing to figure out.</div></div>
+    <div class="feat"><div class="feat-num">05</div><div class="feat-ttl">Fitness Plan</div><div class="feat-desc">Mon–Sun workout cards. Sets and reps. Adapts to fat loss or muscle gain automatically.</div></div>
+    <div class="feat"><div class="feat-num">06</div><div class="feat-ttl">Streak Tracking</div><div class="feat-desc">Days you hit protein in a row. The one number that tells you if the plan is working.</div></div>
+  </div>
+</section>
+
+<section style="padding-top:0;border-bottom:1px solid var(--dirt);">
+  <div class="s-lbl">Live Preview</div>
+  <h2 class="s-ttl">This is<br>the dashboard.</h2>
+  <p class="s-sub">Tap a meal card to log it.</p>
+  <div class="demo">
+    <div class="demo-inner">
+      <div class="demo-hdr">
+        <div class="demo-date">Today — Tracking Day 12</div>
+        <div class="demo-strk">4 Day Streak</div>
+      </div>
+      <div class="demo-rings">
+        <div class="ring-w">
+          <svg viewBox="0 0 88 88" width="88" height="88">
+            <circle cx="44" cy="44" r="38" fill="none" stroke="#1C1C19" stroke-width="8"/>
+            <circle cx="44" cy="44" r="38" fill="none" stroke="#D4B896" stroke-width="8"
+              stroke-dasharray="238.76" stroke-dashoffset="72" stroke-linecap="butt"
+              transform="rotate(-90 44 44)"/>
+          </svg>
+          <div class="ring-in"><div class="ring-v" id="cc">1380</div><div class="ring-u">/ 1800 kcal</div></div>
+        </div>
+        <div class="prog-s">
+          <div class="prog-r"><div class="prog-l"><span>Protein</span><span id="pv">68 / 95g</span></div><div class="prog-t"><div class="prog-f" id="pb" style="width:72%;background:var(--yeezy);"></div></div></div>
+          <div class="prog-r"><div class="prog-l"><span>Carbs</span><span>142 / 200g</span></div><div class="prog-t"><div class="prog-f" style="width:71%;background:var(--sand);"></div></div></div>
+          <div class="prog-r"><div class="prog-l"><span>Fat</span><span>38 / 60g</span></div><div class="prog-t"><div class="prog-f" style="width:63%;background:var(--mud);"></div></div></div>
+        </div>
+      </div>
+      <div class="meal-list" id="mg">
+        <div class="mc" onclick="log(this,280,18)"><div class="mc-time">Breakfast</div><div class="mc-name">Moong Dal Chilla + Curd</div><div class="mc-nums"><div class="mc-n"><b>280</b>kcal</div><div class="mc-n"><b>18</b>g prot</div></div></div>
+        <div class="mc" onclick="log(this,120,8)"><div class="mc-time">Mid-Morning</div><div class="mc-name">Boiled Eggs (2)</div><div class="mc-nums"><div class="mc-n"><b>120</b>kcal</div><div class="mc-n"><b>8</b>g prot</div></div></div>
+        <div class="mc" onclick="log(this,420,22)"><div class="mc-time">Lunch</div><div class="mc-name">Rajma + 2 Roti + Salad</div><div class="mc-nums"><div class="mc-n"><b>420</b>kcal</div><div class="mc-n"><b>22</b>g prot</div></div></div>
+        <div class="mc" onclick="log(this,180,12)"><div class="mc-time">Snack</div><div class="mc-name">Greek Yogurt + Almonds</div><div class="mc-nums"><div class="mc-n"><b>180</b>kcal</div><div class="mc-n"><b>12</b>g prot</div></div></div>
+        <div class="mc" onclick="log(this,380,20)"><div class="mc-time">Dinner</div><div class="mc-name">Paneer Bhurji + Roti</div><div class="mc-nums"><div class="mc-n"><b>380</b>kcal</div><div class="mc-n"><b>20</b>g prot</div></div></div>
+        <div class="mc" onclick="log(this,140,15)"><div class="mc-time">Post-Dinner</div><div class="mc-name">Soya Chunks (1 katori)</div><div class="mc-nums"><div class="mc-n"><b>140</b>kcal</div><div class="mc-n"><b>15</b>g prot</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="s-lbl">Proof</div>
+  <h2 class="s-ttl">Real people.<br>Real numbers.</h2>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="testi-q">"</div>
+      <p class="testi-txt">Before this I had zero idea how much protein I was eating. Turns out dal gives way more than I thought. Hit 98g in Week 3.</p>
+      <div class="testi-res">✓ 98G PROTEIN IN 3 WEEKS</div>
+      <div class="testi-meta"><div class="testi-av">R</div><div><div class="testi-nm">Riya Sharma</div><div class="testi-ct">Mumbai</div></div></div>
+    </div>
+    <div class="testi">
+      <div class="testi-q">"</div>
+      <p class="testi-txt">I'm eggetarian and every other app made me feel like protein was impossible. This works with my diet, not against it.</p>
+      <div class="testi-res">✓ LOST 4.5KG IN 6 WEEKS</div>
+      <div class="testi-meta"><div class="testi-av">A</div><div><div class="testi-nm">Arjun Mehta</div><div class="testi-ct">Delhi</div></div></div>
+    </div>
+    <div class="testi">
+      <div class="testi-q">"</div>
+      <p class="testi-txt">Swarit bhai ne jo plan diya — aur iske saath tracker mile — combination is unbeatable. 7 day streak already.</p>
+      <div class="testi-res">✓ +2.1KG MUSCLE IN 8 WEEKS</div>
+      <div class="testi-meta"><div class="testi-av">P</div><div><div class="testi-nm">Priya Nair</div><div class="testi-ct">Bangalore</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="s-lbl">Access</div>
+  <h2 class="s-ttl">₹150.<br>Once.<br>Forever.</h2>
+  <p class="s-sub">No subscription. No renewal. Pay once, track forever. All future updates included.</p>
+  <div class="price-wrap">
+    <div class="price-box">
+      <div class="price-lbl">Lifetime Access</div>
+      <div class="price-val"><sup>₹</sup>150</div>
+      <div class="price-note">One-time payment — no recurring charges</div>
+      <ul class="price-list">
+        <li>Full dashboard + meal logging</li>
+        <li>40+ Indian food database</li>
+        <li>Custom TDEE + protein targets</li>
+        <li>Personalised fitness plan</li>
+        <li>Weekly progress charts</li>
+        <li>Streak tracker</li>
+        <li>WhatsApp support</li>
+        <li>All future updates</li>
+      </ul>
+      <a href="#upi-pay" class="btn-p" style="display:block;text-align:center;width:100%;">Pay ₹150 via UPI →</a>
+      <div class="guarantee">7-day full refund — no questions asked</div>
+    </div>
+
+    <div class="upi-box" id="upi-pay">
+      <div class="upi-ttl">UPI Payment</div>
+      <div class="upi-sub">Scan the QR or copy the UPI ID. Send your payment screenshot to WhatsApp to activate access within a few hours.</div>
+      <div class="upi-cnt">
+        <div class="upi-qrz" id="qrz">
+          <input type="file" accept="image/*" onchange="uploadQR(event)" title="Upload UPI QR"/>
+          <div id="qr-ph-text">
+            <div class="qr-ph">ADD YOUR<br>QR CODE<br>HERE<br><br><span style="font-size:0.48rem;color:var(--dirt);">click to upload</span></div>
+          </div>
+        </div>
+        <div class="upi-rt">
+          <div class="upi-id-lbl">UPI ID</div>
+          <div class="upi-id-row">
+            <!-- ✏️ REPLACE WITH YOUR UPI ID -->
+            <div class="upi-id-val" id="uid">yourname@upi</div>
+            <button class="upi-copy" onclick="copyUID()">COPY</button>
+          </div>
+          <ol class="upi-steps">
+            <li>Scan QR code or copy the UPI ID above</li>
+            <li>Pay exactly ₹150 via any UPI app</li>
+            <li>Screenshot the payment confirmation</li>
+            <li>Send it on WhatsApp to get your access code</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="s-lbl">Questions</div>
+  <h2 class="s-ttl">Everything<br>you need<br>to know.</h2>
+  <div class="faq-wrap">
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">How do I get access after paying?<span class="faq-plus">+</span></div><div class="faq-a">Send your payment screenshot to Swarit on WhatsApp. You'll receive login credentials within a few hours.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">Is this one-time or a subscription?<span class="faq-plus">+</span></div><div class="faq-a">One-time only. ₹150 and you're in forever, including all future updates. No renewals ever.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">I'm vegetarian (no eggs) — does this work?<span class="faq-plus">+</span></div><div class="faq-a">Built for both. During onboarding you pick vegetarian or eggetarian and everything adapts — meal plans, food database, protein suggestions.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">What's the refund policy?<span class="faq-plus">+</span></div><div class="faq-a">7-day full refund, no questions. If it's not working for you in the first week, message Swarit on WhatsApp and you'll be refunded.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">Is my data private?<span class="faq-plus">+</span></div><div class="faq-a">Yes. Your data is stored securely and never shared with third parties. Only you and Swarit can see your stats and progress.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">Can I change my goal later?<span class="faq-plus">+</span></div><div class="faq-a">Yes. In profile settings you can switch between fat loss, muscle gain, and maintenance anytime. Targets recalculate automatically.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)">What if a food I eat isn't in the database?<span class="faq-plus">+</span></div><div class="faq-a">Message Swarit on WhatsApp with the food name. It gets added within 24 hours.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="ftr-brand">BOUND 2 BE HEALTHY</div>
+    <div class="ftr-by">By Swarit Singh</div>
+  </div>
+  <div class="ftr-links">
+    <a href="#features">System</a>
+    <!-- ✏️ Replace with your Instagram URL -->
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <!-- ✏️ Replace with your WhatsApp number -->
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
+  </div>
+  <div class="ftr-copy">© 2025 Bound 2 Be Healthy</div>
+</footer>
+
+<!-- ✏️ Replace XXXXXXXXXX with your WhatsApp number -->
+<a href="https://wa.me/91XXXXXXXXXX" class="wa" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+let tC=1380,tP=68;
+const L=new Set();
+function log(c,cal,pro){
+  const i=Array.from(c.parentNode.children).indexOf(c);
+  if(L.has(i))return;L.add(i);
+  c.classList.add('logged');tC+=cal;tP+=pro;
+  document.getElementById('cc').textContent=tC;
+  const p=Math.min(100,Math.round((tP/95)*100));
+  document.getElementById('pb').style.width=p+'%';
+  document.getElementById('pv').textContent=tP+' / 95g';
+}
+function faq(el){
+  const a=el.nextElementSibling,plus=el.querySelector('.faq-plus'),open=a.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(x=>{x.classList.remove('open');x.previousElementSibling.querySelector('.faq-plus').classList.remove('open');});
+  if(!open){a.classList.add('open');plus.classList.add('open');}
+}
+function copyUID(){
+  navigator.clipboard.writeText(document.getElementById('uid').textContent).then(()=>{
+    const b=document.querySelector('.upi-copy');b.textContent='COPIED';setTimeout(()=>b.textContent='COPY',2000);
+  });
+}
+function uploadQR(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    document.getElementById('qr-ph-text').innerHTML='<img src="'+ev.target.result+'" class="upi-qr-img" alt="UPI QR"/>';
+    const z=document.getElementById('qrz');z.style.border='1px solid var(--yeezy)';z.style.background='var(--void)';
+  };
+  r.readAsDataURL(f);
+}
+</script>
+</body>
+</html>
